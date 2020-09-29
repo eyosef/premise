@@ -3,13 +3,14 @@ import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 
 import PageOne from "./PageOne";
+import PageTwo from "./PageTwo";
 
 const WizardView = () => {
   const [page, setPage] = useState(0);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [recommendScore, setRecommendScore] = useState(0);
 
-  const PageTwo = () => <div>Page Two</div>;
   const PageThree = () => <div>Page Three</div>;
   const pages = [
     <PageOne
@@ -18,9 +19,20 @@ const WizardView = () => {
       setFirstName={setFirstName}
       setLastName={setLastName}
     />,
-    <PageTwo />,
+    <PageTwo
+      recommendScore={recommendScore}
+      setRecommendScore={setRecommendScore}
+    />,
     <PageThree />,
   ];
+
+  const validatePageOne = () => {
+    return page === 0 && (!firstName.length || !lastName.length) ? true : false;
+  };
+
+  const validatePageTwo = () => {
+    return page === 1 && recommendScore === 0;
+  };
 
   return (
     <div className="wizard-container">
@@ -44,7 +56,7 @@ const WizardView = () => {
             <>
               <button
                 className="next"
-                disabled={!firstName.length || !lastName.length}
+                disabled={validatePageOne() || validatePageTwo()}
               >
                 Next
               </button>

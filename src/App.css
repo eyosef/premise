@@ -11,6 +11,10 @@
   border-radius: 16px;
 }
 
+.App > .wizard-container > .page-container > .page-two-container {
+  margin: 1rem 2rem;
+}
+
 .App > .wizard-container > .required-container {
   display: flex;
   margin: 1rem 2rem;
@@ -39,6 +43,11 @@
   margin-left: auto;
   font-size: 1rem;
   padding: 0;
+}
+
+div[aria-label="rate-your-satisfaction"] {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .App-header {
