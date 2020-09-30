@@ -11,17 +11,6 @@ const WizardView = () => {
     const [recommendScore, setRecommendScore] = useState(0)
     const [textAreaValue, setTextAreaValue] = useState('')
 
-    useEffect(() => {
-        if (page === pages.length - 1) {
-            console.log(`Likely to recommend the product: ${recommendScore}/10`)
-            console.log(`Additional feedback: \n ${textAreaValue} \n`)
-        }
-
-        if (recommendScore >= 8) {
-            setPage(pages.length - 1)
-        }
-    }, [page, recommendScore])
-
     const pages = [
         <PageOne
             recommendScore={recommendScore}
@@ -36,6 +25,17 @@ const WizardView = () => {
             textAreaValue={textAreaValue}
         />,
     ]
+
+    useEffect(() => {
+        if (page === pages.length - 1) {
+            console.log(`Likely to recommend the product: ${recommendScore}/10`)
+            console.log(`Additional feedback: \n ${textAreaValue} \n`)
+        }
+
+        if (recommendScore >= 8) {
+            setPage(pages.length - 1)
+        }
+    }, [page, recommendScore, pages.length, textAreaValue])
 
     const validatePageOne = () => {
         return page === 1 && recommendScore === 0
