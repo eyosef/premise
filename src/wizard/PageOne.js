@@ -1,40 +1,39 @@
 import React from "react";
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
-import Input from "@material-ui/core/Input";
 
-const PageOne = ({ firstName, lastName, setFirstName, setLastName }) => {
-  const validateInput = (inputValue) => {
-    return /^[a-zA-Z]+$/.test(inputValue) || inputValue === "";
-  };
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControl from "@material-ui/core/FormControl";
+import FormLabel from "@material-ui/core/FormLabel";
+
+const PageOne = ({ recommendScore, setRecommendScore }) => {
+  const range = [...Array(10).keys()];
 
   return (
-    <>
+    <div className="page-two-container">
       <FormControl required={true}>
-        <InputLabel htmlFor="first-name">First Name</InputLabel>
-        <Input
-          id="first-name"
-          aria-describedby="first-name-input"
-          onChange={(e) => {
-            validateInput(e.target.value) && setFirstName(e.target.value);
-          }}
-          pattern="[a-zA-Z]+"
-          value={firstName}
-        />
+        <FormLabel component="rate-your-satisfaction">
+          One a scale of 1 (least likely) to 10 (most likely), how likely are
+          you to reccommend this app to a friend?
+        </FormLabel>
+        <RadioGroup
+          aria-label="rate-your-satisfaction"
+          name="rate-your-satisfaction"
+          value={recommendScore}
+          onChange={(e) => setRecommendScore(Number(e.target.value))}
+        >
+          {range.map((number) => (
+            <FormControlLabel
+              key={number}
+              value={number + 1}
+              control={<Radio />}
+              label={number + 1}
+              checked={recommendScore === number + 1}
+            />
+          ))}
+        </RadioGroup>
       </FormControl>
-      <br />
-      <FormControl required={true}>
-        <InputLabel htmlFor="last-name">Last Name</InputLabel>
-        <Input
-          id="last-name"
-          aria-describedby="last-name-input"
-          onChange={(e) => {
-            validateInput(e.target.value) && setLastName(e.target.value);
-          }}
-          value={lastName}
-        />
-      </FormControl>
-    </>
+    </div>
   );
 };
 
