@@ -1,91 +1,91 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App > .wizard-container {
-  border: 1px solid black;
-  max-width: 15rem;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 16px;
+    border: 1px solid black;
+    max-width: 15rem;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 16px;
 }
 
 .App > .wizard-container > .page-container > .page-two-container,
 .page-three-container {
-  margin: 1rem 2rem;
+    margin: 1rem 2rem;
 }
 
 .page-three-container > .survey-response-container > h4 {
-  font-style: italic;
+    font-style: italic;
 }
 
 .page-three-container > .survey-response-container {
-  border: 1px solid grey;
-  padding: 0.5rem;
+    border: 1px solid grey;
+    padding: 0.5rem;
 }
 
 .page-three-container > .survey-response-container > p {
-  font-size: 0.875rem;
+    font-size: 0.875rem;
 }
 
 .page-three-container > .survey-response-container > .response-label {
-  font-size: 0.875rem;
-  font-weight: 400;
-  font-style: italic;
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-style: italic;
 }
 
 .page-three-container
-  > .survey-response-container
-  > .response-label
-  > .response {
-  font-style: normal;
+    > .survey-response-container
+    > .response-label
+    > .response {
+    font-style: normal;
 }
 
 .App > .wizard-container > .required-container {
-  display: flex;
-  margin: 1rem 2rem;
+    display: flex;
+    margin: 1rem 2rem;
 }
 
 .App > .wizard-container > .required-container > span {
-  color: red;
-  font-size: 0.5rem;
+    color: red;
+    font-size: 0.5rem;
 }
 
 .App > .wizard-container > .buttons-container {
-  display: flex;
-  justify-content: space-between;
-  margin: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 2rem;
 }
 
 .App > .wizard-container > .buttons-container > .next-container,
 .prev-container,
 .submit-container {
-  display: flex;
+    display: flex;
 }
 
 .next,
 .prev,
 .submit {
-  border: none;
-  background-color: white;
-  margin-left: auto;
-  font-size: 1rem;
-  padding: 0;
+    border: none;
+    background-color: white;
+    margin-left: auto;
+    font-size: 1rem;
+    padding: 0;
 }
 
-div[aria-label="rate-your-satisfaction"] {
-  margin-left: auto;
-  margin-right: auto;
+div[aria-label='rate-your-satisfaction'] {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
